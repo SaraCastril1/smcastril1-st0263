@@ -8,7 +8,7 @@ message file_response{
 	string file = 1;
 }
 
-service Monedas{
+service File{
 	rpc Find_file(file_request) returns (file_response);
-    rpc List_file(file_request) returns (file_response);
+    //rpc List_file(file_request) returns (file_response);
 }
