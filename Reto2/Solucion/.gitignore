@@ -1,7 +1,7 @@
-srv_persistor/__pycache__/
-srv_persistor/monedas_pb2.py
-srv_persistor/monedas_pb2.pyi
-srv_persistor/monedas_pb2_grpc.py
+
+API_Gateway/monedas_pb2.py
+API_Gateway/monedas_pb2.pyi
+API_Gateway/monedas_pb2_grpc.py
 
 srv_reader/monedas_pb2.py
 srv_reader/monedas_pb2.pyi
