@@ -1,8 +1,0 @@
-
-API_Gateway/monedas_pb2.py
-API_Gateway/monedas_pb2.pyi
-API_Gateway/monedas_pb2_grpc.py
-
-srv_reader/monedas_pb2.py
-srv_reader/monedas_pb2.pyi
-srv_reader/monedas_pb2_grpc.py
