@@ -4,9 +4,9 @@
 
 import pika
 
-connection = pika.BlockingConnection(pika.ConnectionParameters('localhost', 5672, '/', pika.PlainCredentials('user', 'password')))
+connection = pika.BlockingConnection(pika.ConnectionParameters('54.85.196.208', 5672, '/', pika.PlainCredentials('user', 'password')))
 channel = connection.channel()
 
-channel.basic_publish(exchange='my_exchange', routing_key='test', body='Test!')
+channel.basic_publish(exchange='my_exchange', routing_key='', body='Test!')
 
 connection.close()
