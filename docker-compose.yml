@@ -1,0 +1,21 @@
+version: '3.3'
+services:
+  srv_1:
+    build:
+      context: ./
+
+      dockerfile: ./srv_1/dockerfile
+
+    ports:
+      - "50051:50051"
+
+
+
+  API_Gateway:
+    build:
+      context: ./
+
+      dockerfile: ./API_Gateway/dockerfile
+
+    depends_on:
+      - API_Gateway
