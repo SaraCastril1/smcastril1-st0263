@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+message EmptyMessage{}
+
+message PingMonedasResponse{
+	string ack = 1;
+}
+
+service Monedas{
+	rpc PingMonedas(EmptyMessage) returns (PingMonedasResponse);
+}
