@@ -9,3 +9,7 @@ message PingMonedasResponse{
 service Monedas{
 	rpc PingMonedas(EmptyMessage) returns (PingMonedasResponse);
 }
+
+
+
+
