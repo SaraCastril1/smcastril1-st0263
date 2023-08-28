@@ -5,7 +5,7 @@ message file_request{
 }
 
 message file_response{
-	string file = 1;
+	bool file = 1;
 }
 
 service File{

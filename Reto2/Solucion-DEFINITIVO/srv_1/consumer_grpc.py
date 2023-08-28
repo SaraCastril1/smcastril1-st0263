@@ -1,5 +1,6 @@
 from concurrent import futures
 
+import os
 import grpc
 import file_pb2
 import file_pb2_grpc
@@ -18,11 +19,21 @@ def serve():
 
 #Link el microservicio con una clase de python
 class File(file_pb2_grpc.FileServicer):
+        
+        def Find_file(self, request, context):
+                if os.path.exists(request):
+                        response = file_pb2.file_response(file=True)
+                        return response
+                else:
+                       response = file_pb2.file_response(file=False)
+                       return response
+
+               
       
-      def Find_file(self, request, context):
-            print(request.file)
-            response = file_pb2.file_response(file='1')
-            return response
+        # def Find_file(self, request, context):
+        #        print(request.file)
+        #        response = file_pb2.file_response(file='1')
+        #        return response
       
     #   def List_file(self, request, context):
     #         print(request.date)
