@@ -1,0 +1,14 @@
+#Se ejecutará dentro de una imagen de python publica
+FROM python:3.8-slim
+
+#Necesitamos pasar el código fuente al contenedor docker
+COPY ./srv_persistor /home/app
+
+#Me posiciono en la carpeta donde tengo el código
+WORKDIR /home/app
+
+RUN pip3.8 install --upgrade pip
+RUN pip3.8 install -r requirements.txt
+
+#Lanza el servidor
+CMD ["python3.8", "-u", "main_profe.py"]

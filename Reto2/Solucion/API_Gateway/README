@@ -1,0 +1,10 @@
+virtual env:
+    1. Me paro en la carpeta
+    2. python3 -m venv env
+    3. activar env -> source env/bin/activate
+        On windows -> env\Scripts\activate
+
+
+Proto:
+    python -m grpc_tools.protoc -I ./protobufs --python_out=. --pyi_out=. --grpc_python_out=. ./protobufs/monedas.proto
+    python3 -m grpc_tools.protoc -I ../protobufs --python_out=. --pyi_out=. --grpc_python_out=. ../protobufs/Service.proto
