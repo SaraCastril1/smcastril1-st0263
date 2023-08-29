@@ -13,5 +13,5 @@ class file_request(_message.Message):
 class file_response(_message.Message):
     __slots__ = ["file"]
     FILE_FIELD_NUMBER: _ClassVar[int]
-    file: str
-    def __init__(self, file: _Optional[str] = ...) -> None: ...
+    file: bool
+    def __init__(self, file: bool = ...) -> None: ...
