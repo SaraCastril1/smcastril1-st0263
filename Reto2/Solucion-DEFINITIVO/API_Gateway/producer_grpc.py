@@ -5,7 +5,7 @@ import file_pb2_grpc
 #PRODUCER
 
 
-HOST = '[srv_persistor]:50051'
+HOST = '[3.222.15.155]:50051'
 
 def serve():
 	#Codigo estra -------------------------------------------------
@@ -14,7 +14,7 @@ def serve():
 	#--------------------------------------------------------------
 	
     #Aqui se debe levantar la conexion
-    with grpc.insecure_channel('srv_persistor:50051') as channel:
+    with grpc.insecure_channel("3.209.30.241:50051") as channel:
         stub = file_pb2_grpc.FileStub(channel)
         #request = monedas_pb2.EmptyMessage()
         #response = stub.PingMonedas(request)
