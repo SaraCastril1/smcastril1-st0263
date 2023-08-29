@@ -13,7 +13,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\nfile.proto\"\x1c\n\x0c\x66ile_request\x12\x0c\n\x04\x66ile\x18\x01 \x01(\t\"\x1d\n\rfile_response\x12\x0c\n\x04\x66ile\x18\x01 \x01(\t22\n\x04\x46ile\x12*\n\tFind_file\x12\r.file_request\x1a\x0e.file_responseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\nfile.proto\"\x1c\n\x0c\x66ile_request\x12\x0c\n\x04\x66ile\x18\x01 \x01(\t\"\x1d\n\rfile_response\x12\x0c\n\x04\x66ile\x18\x01 \x01(\x08\x32\x32\n\x04\x46ile\x12*\n\tFind_file\x12\r.file_request\x1a\x0e.file_responseb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
