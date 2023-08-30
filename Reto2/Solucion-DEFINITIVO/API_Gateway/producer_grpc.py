@@ -8,6 +8,8 @@ import sys
 
 HOST = "3.209.30.241:50051"
 
+# gRPC -----------------------------------------------------------
+
 
 def find_file(stub, pattern):
     response = stub.Find_file(file_pb2.file_request(file=pattern))
@@ -25,28 +27,32 @@ def serve():
     #Aqui se debe levantar la conexion
     with grpc.insecure_channel("3.209.30.241:50051") as channel:
         stub = file_pb2_grpc.FileStub(channel)
+    
+    if sys.argv[1] == 'find':
+        find_file(stub, sys.argv[2])
+    elif sys.argv[1] == 'list':
+        list_files(stub, sys.argv[2])
+    else:
+        print("Invalid command. Use 'find' or 'list'.")
+        return(1)
 
-        if len(sys.argv) < 3:
-            print("Valid input: python3 producer_grpc.py find/list <file/directory> ")
-            return (1)
+        
 
+def main():
+    if len(sys.argv) < 3:
+        print("Valid input: python3 producer_grpc.py find/list <file/directory> ")
+        return (1)
         #command = sys.argv[1]
         #argument = sys.argv[2]
-
-        if sys.argv[1] == 'find':
-            find_file(stub, sys.argv[2])
-        elif sys.argv[1] == 'list':
-            list_files(stub, sys.argv[2])
-        else:
-            print("Invalid command. Use 'find' or 'list'.")
-            return(1)
+    try: 
+        serve()
+    except:
+        print("Lo siento")
 
 
 			
 
 
 if __name__ == "__main__":
-    try: 
-        serve()
-    except:
-        print("Lo siento")
+    main()
+    
