@@ -4,21 +4,22 @@
 
 import pika
 import os
+import fnmatch
 
         
-# def Find_file(self, request, context):
-#     file_path = os.path.join(request.file)
-#     print("Find: ",file_path)
-#     if os.path.exists(file_path):
-#         return file_pb2.file_response(file= 1, coincidence = [file_path])
-#     else:
-#         #return file_pb2.file_response(file= 0, coincidence = 'File not found')
-#         matching_files = fnmatch.filter(os.listdir("."), os.path.basename(file_path))
-#     if matching_files:
-#         return file_pb2.file_response(file=1, coincidence = matching_files)
-#     else:
-#         return file_pb2.file_response(file= 0, coincidence = ["File not found -> No coincidences"])
-                
+def Find_file(request):
+
+    file_path = os.path.join(request)
+    if os.path.exists(file_path):
+        print("True: ", file_path)
+    else:
+        #return file_pb2.file_response(file= 0, coincidence = 'File not found')
+        matching_files = fnmatch.filter(os.listdir("."), os.path.basename(file_path))
+    if matching_files:
+        print("True: ", matching_files)
+    else:
+        print("False: File not found -> Not coincidences ")
+              
 
 # def List_file(self, request, context):
 #     try:
@@ -39,7 +40,8 @@ def main():
         if segmento[0] == "list":
             print("list")
         elif segmento[0] == "find":
-            print("find")
+            print("find: ", segmento[1])
+            Find_file(segmento[1])
         else:
             print("Status: 400")
         
