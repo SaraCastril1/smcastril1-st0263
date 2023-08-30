@@ -38,7 +38,7 @@ def main():
         segmento = body.decode('utf-8').split('/')
         if segmento[0] == "list":
             print("list")
-        elif segmento[1] == "find":
+        elif segmento[0] == "find":
             print("find")
         else:
             print("Status: 400")
