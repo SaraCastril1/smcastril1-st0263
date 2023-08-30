@@ -46,4 +46,7 @@ def serve():
 
 
 if __name__ == "__main__":
-	serve()
+    try: 
+        serve()
+    except:
+        print("Lo siento")
