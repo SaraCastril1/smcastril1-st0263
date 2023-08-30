@@ -9,7 +9,7 @@ message file_response{
 }
 
 message list_response{
-	list file = 1;
+	repeated string file = 1;
 }
 
 service File{
