@@ -21,19 +21,12 @@ class File(file_pb2_grpc.FileServicer):
                 else:
                        return file_pb2.file_response(file= 0)
                 
+        
+                
 
                
       
-        #  def Find_file(self, request, context):
-        #         print(request.file)
-        #         response = file_pb2.file_response(file= 1 )
-        #         return response
-      
-    #   def List_file(self, request, context):
-    #         print(request.date)
-    #         #print(request.source)
-    #         response = monedas_pb2.Moneda_response(data=request.open)
-    #         return response
+       
    
 #    def AddProduct(self, request, context):
 #       print("Request is received: " + str(request))

@@ -10,5 +10,5 @@ message file_response{
 
 service File{
 	rpc Find_file(file_request) returns (file_response);
-    //rpc List_file(file_request) returns (file_response);
+    rpc List_file(file_request) returns (file_response);
 }
