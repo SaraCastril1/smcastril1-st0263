@@ -21,14 +21,14 @@ def Find_file(request):
             print("False: File not found -> Not coincidences ")
               
 
-# def List_file(self, request, context):
-#     try:
-#         files = os.listdir(request.file)
-#         print("List: ", request.file)
-#         return file_pb2.list_response(file = files)
-#     except OSError as e:
-#         return f"Error listing files in '{request.file}': {e}"
-#         #return []
+def List_file(directory):
+    try:
+        files = os.listdir(directory)
+        print(files)
+        #return file_pb2.list_response(file = files)
+    except OSError as e:
+        return f"Error listing files in '{directory}': {e}"
+        #return []
 
 def main():
 
@@ -39,6 +39,7 @@ def main():
         segmento = body.decode('utf-8').split('/')
         if segmento[0] == "list":
             print("list")
+            List_file(segmento[1])
         elif segmento[0] == "find":
             print("find: ", segmento[1])
             Find_file(segmento[1])
