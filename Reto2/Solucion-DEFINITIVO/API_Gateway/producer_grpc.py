@@ -42,14 +42,7 @@ def serve():
             print("Invalid command. Use 'find' or 'list'.")
             return(1)
 
-        # request = file_pb2.file_request(file = "*.txt")
-        # response = stub.Find_file(request)
-        # print(response.file)
-        # print(response.coincidence)
 
-        # request_list = file_pb2.file_request(file = "./")
-        # response_list = stub.List_file(request_list)
-        # print(response_list.file)
 			
 
 
