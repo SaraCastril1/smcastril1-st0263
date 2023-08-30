@@ -19,7 +19,7 @@ def serve():
         #request = monedas_pb2.EmptyMessage()
         #response = stub.PingMonedas(request)
         #print("Recived: ", response.ack)
-        request = file_pb2.file_request(file = "pepe.txt")
+        request = file_pb2.file_request(file = ".\Makefile")
         response = stub.Find_file(request)
         print(response.file)
 			
