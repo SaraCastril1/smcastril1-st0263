@@ -13,7 +13,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\nfile.proto\"\x1c\n\x0c\x66ile_request\x12\x0c\n\x04\x66ile\x18\x01 \x01(\t\"\x1d\n\rfile_response\x12\x0c\n\x04\x66ile\x18\x01 \x01(\x08\x32\x32\n\x04\x46ile\x12*\n\tFind_file\x12\r.file_request\x1a\x0e.file_responseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\nfile.proto\"\x1c\n\x0c\x66ile_request\x12\x0c\n\x04\x66ile\x18\x01 \x01(\t\"2\n\rfile_response\x12\x0c\n\x04\x66ile\x18\x01 \x01(\x08\x12\x13\n\x0b\x63oincidence\x18\x02 \x03(\t\"\x1d\n\rlist_response\x12\x0c\n\x04\x66ile\x18\x01 \x03(\t2^\n\x04\x46ile\x12*\n\tFind_file\x12\r.file_request\x1a\x0e.file_response\x12*\n\tList_file\x12\r.file_request\x1a\x0e.list_responseb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -24,7 +24,9 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _globals['_FILE_REQUEST']._serialized_start=14
   _globals['_FILE_REQUEST']._serialized_end=42
   _globals['_FILE_RESPONSE']._serialized_start=44
-  _globals['_FILE_RESPONSE']._serialized_end=73
-  _globals['_FILE']._serialized_start=75
-  _globals['_FILE']._serialized_end=125
+  _globals['_FILE_RESPONSE']._serialized_end=94
+  _globals['_LIST_RESPONSE']._serialized_start=96
+  _globals['_LIST_RESPONSE']._serialized_end=125
+  _globals['_FILE']._serialized_start=127
+  _globals['_FILE']._serialized_end=221
 # @@protoc_insertion_point(module_scope)

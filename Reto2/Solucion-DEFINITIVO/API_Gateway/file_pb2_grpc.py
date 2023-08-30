@@ -19,14 +19,24 @@ class FileStub(object):
                 request_serializer=file__pb2.file_request.SerializeToString,
                 response_deserializer=file__pb2.file_response.FromString,
                 )
+        self.List_file = channel.unary_unary(
+                '/File/List_file',
+                request_serializer=file__pb2.file_request.SerializeToString,
+                response_deserializer=file__pb2.list_response.FromString,
+                )
 
 
 class FileServicer(object):
     """Missing associated documentation comment in .proto file."""
 
     def Find_file(self, request, context):
-        """rpc List_file(file_request) returns (file_response);
-        """
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def List_file(self, request, context):
+        """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -38,6 +48,11 @@ def add_FileServicer_to_server(servicer, server):
                     servicer.Find_file,
                     request_deserializer=file__pb2.file_request.FromString,
                     response_serializer=file__pb2.file_response.SerializeToString,
+            ),
+            'List_file': grpc.unary_unary_rpc_method_handler(
+                    servicer.List_file,
+                    request_deserializer=file__pb2.file_request.FromString,
+                    response_serializer=file__pb2.list_response.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -63,5 +78,22 @@ class File(object):
         return grpc.experimental.unary_unary(request, target, '/File/Find_file',
             file__pb2.file_request.SerializeToString,
             file__pb2.file_response.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def List_file(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/File/List_file',
+            file__pb2.file_request.SerializeToString,
+            file__pb2.list_response.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
