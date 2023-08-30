@@ -35,7 +35,13 @@ def main():
     channel = connection.channel()
 
     def callback(ch, method, properties, body):
-        print(f'{body} is received')
+        segmento = body.split('/')
+        if segmento[0] == "list":
+            print("list")
+        elif segmento[1] == "find":
+            print("find")
+        else:
+            print("Status: 400")
         
     channel.basic_consume(queue="my_app", on_message_callback=callback, auto_ack=True)
     channel.start_consuming()
