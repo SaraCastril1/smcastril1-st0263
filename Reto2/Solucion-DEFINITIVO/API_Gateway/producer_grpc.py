@@ -23,7 +23,7 @@ def serve():
         response = stub.Find_file(request)
         print(response.file)
 
-        request_list = file_pb2.file_request(file = "protobufs")
+        request_list = file_pb2.file_request(file = "Reto2")
         response_list = stub.List_file(request_list)
         print(response_list.file)
 			
