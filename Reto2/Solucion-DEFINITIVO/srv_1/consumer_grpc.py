@@ -20,7 +20,12 @@ class File(file_pb2_grpc.FileServicer):
                 if os.path.exists(file_path):
                         return file_pb2.file_response(file= 1, coincidence = file_path)
                 else:
-                       return file_pb2.file_response(file= 0, coincidence = 'File not found')
+                       #return file_pb2.file_response(file= 0, coincidence = 'File not found')
+                       matching_files = fnmatch.filter(os.listdir("."), os.path.basename(file_path))
+                       if matching_files:
+                            return file_pb2.file_response(file=1, coincidence = matching_files)
+                       else:
+                             return file_pb2.file_response(file= 0, coincidence = 'File not found')
                 
         def List_file(self, request, context):
               try:
