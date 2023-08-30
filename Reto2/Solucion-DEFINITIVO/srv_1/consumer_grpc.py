@@ -21,7 +21,14 @@ class File(file_pb2_grpc.FileServicer):
                 else:
                        return file_pb2.file_response(file= 0)
                 
-        
+        def List_file(self, request, context):
+              try:
+                files = os.listdir(request.file)
+                print(files)
+                return file_pb2.list_response(file = files)
+              except OSError as e:
+                return f"Error listing files in '{request.file}': {e}"
+                #return []
                 
 
                

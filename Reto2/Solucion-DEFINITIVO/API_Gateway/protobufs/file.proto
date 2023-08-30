@@ -8,7 +8,11 @@ message file_response{
 	bool file = 1;
 }
 
+message list_response{
+	String file = 1;
+}
+
 service File{
 	rpc Find_file(file_request) returns (file_response);
-    rpc List_file(file_request) returns (file_response);
+    rpc List_file(file_request) returns (list_response);
 }

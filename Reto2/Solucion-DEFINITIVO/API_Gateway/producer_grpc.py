@@ -22,6 +22,10 @@ def serve():
         request = file_pb2.file_request(file = "REST.py")
         response = stub.Find_file(request)
         print(response.file)
+
+        request_list = file_pb2.file_request(file = "protobufs")
+        response_list = stub.List_file(request_list)
+        print(response_list.file)
 			
 
 
