@@ -6,6 +6,8 @@ message file_request{
 
 message file_response{
 	bool file = 1;
+	repeated string coincidence = 2;
+
 }
 
 message list_response{
