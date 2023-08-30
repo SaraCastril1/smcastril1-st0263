@@ -15,10 +15,10 @@ def Find_file(request):
     else:
         #return file_pb2.file_response(file= 0, coincidence = 'File not found')
         matching_files = fnmatch.filter(os.listdir("."), os.path.basename(file_path))
-    if matching_files:
-        print("True: ", matching_files)
-    else:
-        print("False: File not found -> Not coincidences ")
+        if matching_files:
+            print("True: ", matching_files)
+        else:
+            print("False: File not found -> Not coincidences ")
               
 
 # def List_file(self, request, context):
