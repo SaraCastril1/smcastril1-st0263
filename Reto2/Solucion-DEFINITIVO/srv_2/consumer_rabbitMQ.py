@@ -8,7 +8,7 @@ import fnmatch
 
         
 def Find_file(request):
-
+    matching_files = []
     file_path = os.path.join(request)
     if os.path.exists(file_path):
         print("True: ", file_path)
