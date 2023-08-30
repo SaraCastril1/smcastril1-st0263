@@ -27,9 +27,9 @@ def find_route(pattern):
 
 @app.route('/list/<directory>', methods=['GET'])
 def list_route(directory):
-    response = list_files(directory)
-    return f"List result: {response.file}"
+    #response = list_files(directory)
+    return f"List result: {directory}"
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=80, host='0.0.0.0')
 
