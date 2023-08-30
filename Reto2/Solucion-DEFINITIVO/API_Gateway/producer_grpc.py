@@ -28,13 +28,13 @@ def serve():
     with grpc.insecure_channel("3.209.30.241:50051") as channel:
         stub = file_pb2_grpc.FileStub(channel)
     
-    if sys.argv[1] == 'find':
-        find_file(stub, sys.argv[2])
-    elif sys.argv[1] == 'list':
-        list_files(stub, sys.argv[2])
-    else:
-        print("Invalid command. Use 'find' or 'list'.")
-        return(1)
+        if sys.argv[1] == 'find':
+            find_file(stub, sys.argv[2])
+        elif sys.argv[1] == 'list':
+            list_files(stub, sys.argv[2])
+        else:
+            print("Invalid command. Use 'find' or 'list'.")
+            return(1)
 
         
 
