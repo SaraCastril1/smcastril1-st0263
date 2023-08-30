@@ -44,7 +44,7 @@ def rabbitMQ():
     
     connection = pika.BlockingConnection(pika.ConnectionParameters('54.85.196.208', 5672, '/', pika.PlainCredentials('user', 'password')))
     channel = connection.channel()
-    channel.basic_publish(exchange='my_exchange', routing_key='', body= sys.argv[1]+sys.argv[2] )
+    channel.basic_publish(exchange='my_exchange', routing_key='', body= sys.argv[1]+"/"+sys.argv[2] )
     connection.close()
 
         
