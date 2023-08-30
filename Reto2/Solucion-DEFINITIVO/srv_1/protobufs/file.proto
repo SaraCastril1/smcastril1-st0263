@@ -9,7 +9,7 @@ message file_response{
 }
 
 message list_response{
-	String file = 1;
+	list file = 1;
 }
 service File{
 	rpc Find_file(file_request) returns (file_response);

@@ -15,7 +15,7 @@ class File(file_pb2_grpc.FileServicer):
         
         def Find_file(self, request, context):
                 file_path = os.path.join(request.file)
-                print(file_path)
+                print("Find: ",file_path)
                 if os.path.exists(file_path):
                         return file_pb2.file_response(file= 1)
                 else:
@@ -24,7 +24,7 @@ class File(file_pb2_grpc.FileServicer):
         def List_file(self, request, context):
               try:
                 files = os.listdir(request.file)
-                print(request.file)
+                print("List: ", request.file)
                 return file_pb2.list_response(file = files)
               except OSError as e:
                 return f"Error listing files in '{request.file}': {e}"
