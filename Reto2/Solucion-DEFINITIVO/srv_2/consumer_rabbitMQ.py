@@ -35,7 +35,7 @@ def main():
     channel = connection.channel()
 
     def callback(ch, method, properties, body):
-        segmento = body.split('/')
+        segmento = body.decode('utf-8').split('/')
         if segmento[0] == "list":
             print("list")
         elif segmento[1] == "find":
