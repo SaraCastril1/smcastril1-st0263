@@ -9,24 +9,17 @@ import file_pb2_grpc
 HOST = '[::]:50051'
 
 
-def serve():
-        server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
-        file_pb2_grpc.add_FileServicer_to_server(File(), server)
-        server.add_insecure_port(HOST)
-        print("Service find/list is running... ")
-        server.start()
-        server.wait_for_termination()
 
 #Link el microservicio con una clase de python
 class File(file_pb2_grpc.FileServicer):
         
         def Find_file(self, request, context):
-                response
-                if os.path.exists(request):
-                        response = file_pb2.file_response(file= 1)
+                file_path = os.path.join("./Makefile", request.file)
+                if os.path.exists(file_path):
+                        return file_pb2.file_response(file= 1)
                 else:
-                       response = file_pb2.file_response(file= 0)
-                return response
+                       return file_pb2.file_response(file= 0)
+                
 
                
       
@@ -45,6 +38,13 @@ class File(file_pb2_grpc.FileServicer):
 #       print("Request is received: " + str(request))
 #       return Service_pb2.TransactionResponse(status_code=1)
 
+def serve():
+        server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
+        file_pb2_grpc.add_FileServicer_to_server(File(), server)
+        server.add_insecure_port(HOST)
+        print("Service find/list is running... ")
+        server.start()
+        server.wait_for_termination()
 
 if __name__ == "__main__":
     serve()
