@@ -18,7 +18,7 @@ class File(file_pb2_grpc.FileServicer):
                 file_path = os.path.join(request.file)
                 print("Find: ",file_path)
                 if os.path.exists(file_path):
-                        return file_pb2.file_response(file= 1, coincidence = file_path)
+                        return file_pb2.file_response(file= 1, coincidence = [file_path])
                 else:
                        #return file_pb2.file_response(file= 0, coincidence = 'File not found')
                        matching_files = fnmatch.filter(os.listdir("."), os.path.basename(file_path))
