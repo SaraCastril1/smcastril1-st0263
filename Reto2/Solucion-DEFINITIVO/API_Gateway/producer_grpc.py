@@ -1,6 +1,7 @@
 import grpc 
 import file_pb2
 import file_pb2_grpc
+import pika
 
 import sys
 #PRODUCER
@@ -36,6 +37,16 @@ def serve():
             print("Invalid command. Use 'find' or 'list'.")
             return(1)
 
+
+# rabbitMQ -----------------------------------------------------------
+
+def rabbitMQ():
+    
+    connection = pika.BlockingConnection(pika.ConnectionParameters('54.85.196.208', 5672, '/', pika.PlainCredentials('user', 'password')))
+    channel = connection.channel()
+    channel.basic_publish(exchange='my_exchange', routing_key='', body='Test!')
+    connection.close()
+
         
 
 def main():
@@ -47,7 +58,7 @@ def main():
     try: 
         serve()
     except:
-        print("Lo siento")
+        rabbitMQ()
 
 
 			
