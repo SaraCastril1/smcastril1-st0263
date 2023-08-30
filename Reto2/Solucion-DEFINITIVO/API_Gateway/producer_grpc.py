@@ -1,5 +1,4 @@
 import grpc 
-import os
 import file_pb2
 import file_pb2_grpc
 
@@ -7,7 +6,7 @@ import sys
 #PRODUCER
 
 
-HOST = '[3.222.15.155]:50051'
+HOST = "3.209.30.241:50051"
 
 
 def find_file(stub, pattern):
