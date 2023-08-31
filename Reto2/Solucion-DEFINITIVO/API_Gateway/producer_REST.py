@@ -49,8 +49,8 @@ def find_route(pattern):
 
 @app.route('/list/<directory>', methods=['GET'])
 def list_route(directory):
-    my_path = os.path.join("/", directory)
-    response = list_files(my_path)
+    #my_path = os.path.join("/", directory)
+    response = list_files(directory)
     
     if response is not None:
         return f"List result: {response}"  
