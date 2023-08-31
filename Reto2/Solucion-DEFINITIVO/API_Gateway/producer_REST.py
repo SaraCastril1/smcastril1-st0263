@@ -30,6 +30,8 @@ def find_file(pattern):
     except:
         rabbitMQ("find", pattern)
 
+
+
 def list_files(directory):
     try:
         with grpc.insecure_channel(f"{PRODUCER_HOST}:{PRODUCER_PORT}") as channel:
@@ -49,7 +51,12 @@ def find_route(pattern):
 def list_route(directory):
     my_path = os.path.join("/", directory)
     response = list_files(my_path)
-    return f"List result: {response.file}"
+    
+    if response is not None:
+        return f"List result: {response}"  
+    else:
+        return "List result: No files found"
+    
 
 
 

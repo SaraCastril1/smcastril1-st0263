@@ -37,6 +37,7 @@ def list_route(directory):
     response = list_files(directory)
     return f"List result: {response.file}"
 
+
 if __name__ == '__main__':
     serve()
     app.run(debug=True)
