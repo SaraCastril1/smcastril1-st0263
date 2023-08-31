@@ -1,25 +1,43 @@
 from flask import Flask
+import os
+import pika
 import grpc
 import file_pb2
 import file_pb2_grpc
+
 
 app = Flask(__name__)
 
 PRODUCER_HOST = '3.209.30.241'
 PRODUCER_PORT = 50051
 
+# rabbitMQ-----------------------------------------------------------------
+def rabbitMQ(method, path):
+    
+    connection = pika.BlockingConnection(pika.ConnectionParameters('54.85.196.208', 5672, '/', pika.PlainCredentials('user', 'password')))
+    channel = connection.channel()
+    channel.basic_publish(exchange='my_exchange', routing_key='', body= method+"/"+path )
+    connection.close()
+
+# gRPC ------------------------------------------------------------------
+
 def find_file(pattern):
-    with grpc.insecure_channel(f"{PRODUCER_HOST}:{PRODUCER_PORT}") as channel:
-        stub = file_pb2_grpc.FileStub(channel)
-        response = stub.Find_file(file_pb2.file_request(file=pattern))
-        return response
+    try:
+        with grpc.insecure_channel(f"{PRODUCER_HOST}:{PRODUCER_PORT}") as channel:
+            stub = file_pb2_grpc.FileStub(channel)
+            response = stub.Find_file(file_pb2.file_request(file=pattern))
+            return response
+    except:
+        rabbitMQ("find", pattern)
 
 def list_files(directory):
-    with grpc.insecure_channel(f"{PRODUCER_HOST}:{PRODUCER_PORT}") as channel:
-        stub = file_pb2_grpc.FileStub(channel)
-        response = stub.List_file(file_pb2.file_request(file=directory))
-        return response.file
-    
+    try:
+        with grpc.insecure_channel(f"{PRODUCER_HOST}:{PRODUCER_PORT}") as channel:
+            stub = file_pb2_grpc.FileStub(channel)
+            response = stub.List_file(file_pb2.file_request(file=directory))
+            return response.file
+    except:
+        rabbitMQ("list", directory)
 
 
 @app.route('/find/<pattern>', methods=['GET'])
@@ -29,8 +47,11 @@ def find_route(pattern):
 
 @app.route('/list/<directory>', methods=['GET'])
 def list_route(directory):
-    response = list_files(directory)
+    my_path = os.path.join("/", directory)
+    response = list_files(my_path)
     return f"List result: {response.file}"
+
+
 
 
 if __name__ == '__main__':
