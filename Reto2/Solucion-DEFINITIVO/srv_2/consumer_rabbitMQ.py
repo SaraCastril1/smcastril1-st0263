@@ -34,6 +34,7 @@ def main():
 
     connection = pika.BlockingConnection(pika.ConnectionParameters('54.85.196.208', 5672, '/', pika.PlainCredentials("user", "password")))
     channel = connection.channel()
+    print("Service find/list is running... ")
 
     def callback(ch, method, properties, body):
         segmento = body.decode('utf-8').split('/')
