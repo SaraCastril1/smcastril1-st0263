@@ -47,11 +47,12 @@ Se verificar que esta corriendo rabbitmq en la imagen de docker, si no esta corr
 docker start rabbit-server
 ```
 Una vez inicializado el rabbitMO podemos ingresar desde el navegador a http://54.85.196.208:15672/ para acceder, vizualizar y modificar uestras colas y exchanges. El usuario y contraseña por defecto son "user" y "password".
+![image](https://github.com/SaraCastril1/smcastril1-st0263/assets/84990901/13ee6c20-7f1e-4486-89e3-c8074bb5bf13)
 
 
 Una vez hemos subido el rabbit-server, debemos empezar a correr los microservicios. Es indispensable que estos se corran primero, pues serán los que se podrán a esperar por peticiones.
 
-Para correr el microservicio 1 nos ubicamos en la carpeta donde este se encuentra.
+Para correr el microservicio 1  con IP elastica: 3.209.30.241 nos ubicamos en la carpeta donde este se encuentra.
 ```
 cd smcastril1-st0263/Reto2/Solucion-DEFINITIVO/srv_1
 ```
@@ -64,7 +65,7 @@ Finalemente corremos el ejecutable del microservicio 1.
 ```
 python3 consumer_grpc.py
 ```
-A continuación se pondrá a correr el microservicio 2, los pasos a seguir son muy similares:
+A continuación se pondrá a correr el microservicio 2 con IP elástica: 35.173.12.205, los pasos a seguir son muy similares:
 
 Para correr el microservicio 2 nos ubicamos en la carpeta donde este se encuentra.
 ```
@@ -74,17 +75,39 @@ Una vez estamos el la carpeta, debemos compilar e instalar las dependencias nece
 ```
 make srv_2
 ```
-
 Finalemente corremos el ejecutable del microservicio 1.
 ```
-python3 consumer_grpc.py
+python3 consumer_rabbitMQ.py
 ```
+Una vez estan corriendo nuestros microservicios, podemos conectarnos a ellos a través de un productor gRPC:
 
-## detalles técnicos
-Para el rabbitmq se utilizan los exchange para administrar la cola.
-El grpc se implemento mediante callbacks
-## descripción y como se configura los parámetros del proyecto (ej: ip, puertos, conexión a bases de datos, variables de ambiente, parámetros, etc)
-La API de flask corre en el puerto 5000, el de grpc en el puerto 50051 y rabbitmq por los puertos por defecto(5672 y 15672)
+Para correr el APE_Gateway con IP elástica: 3.222.15.155 nos ubicamos en la carpeta donde este se encuentra.
+```
+cd smcastril1-st0263/Reto2/Solucion-DEFINITIVO/API_Gateway
+```
+Una vez estamos el la carpeta, debemos compilar e instalar las dependencias necesarias, para lo cual se creó un Makefile que hará la tarea por usted.
+```
+make API_Gateway
+```
+Finalemente corremos el ejecutable.
+```
+sudo python3 producer_REST.py
+```
+Finalmente, cuando ya nuestro producer está corriendo, podemos conectarnos a el a travez de API REST, desde Postman, teniendo en cuenta que  La API de flask corre en el puerto 80, y escucha desde cualquier parte. 
+![image](https://github.com/SaraCastril1/smcastril1-st0263/assets/84990901/c2fee053-4c26-4957-8ec6-5f68d367a87d)
 
-## opcional - detalles de la organización del código por carpetas o descripción de algún archivo. (ESTRUCTURA DE DIRECTORIOS Y ARCHIVOS IMPORTANTE DEL PROYECTO, comando 'tree' de linux)
-Cada servicio esta separado en carpetas idependientes, cada uno tiene sus propias dependencias y variables de entorno
+Debemos conectarnos desde el Postman hacia la dirección IP elastica del API_Gateway (3.222.15.155) de esta manera:
+![image](https://github.com/SaraCastril1/smcastril1-st0263/assets/84990901/5e08ad8c-cb28-4786-a226-797068195a1c)
+
+# Referencias:
+
+https://www.geeksforgeeks.org/what-is-message-oriented-middleware-mom/
+https://flask.palletsprojects.com/en/2.3.x/
+https://www.rabbitmq.com/getstarted.html
+
+# Funcionality Demo:
+
+A continuación se presenta un video que explica como funciona el proyecto:
+
+https://eafit-my.sharepoint.com/personal/smcastril1_eafit_edu_co/_layouts/15/stream.aspx?id=%2Fpersonal%2Fsmcastril1%5Feafit%5Fedu%5Fco%2FDocuments%2FGrabaciones%2FRoom%2018%2D20230830%5F233441%2DMeeting%20Recording%2Emp4&ga=1
+
