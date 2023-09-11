@@ -8,7 +8,7 @@
 # Procesos comunicantes por API REST, RPC y MOM
 #
 # 1. breve descripción de la actividad
-Este reto buscaba comunicar diferentes procesos remotos a través de gRPC de manera sicrónica, con una integración de un middleware oriented message (rabbitMQ) como estrategia de toleracia a fallos asincrónica, en caso de que el servidor gRPC callera.
+Este reto buscaba comunicar diferentes procesos remotos a través de gRPC de manera sicrónica, con una integración de un middleware oriented message (rabbitMQ) como estrategia de toleracia a fallos asincrónica, en caso de que el servidor gRPC dejara de funcionar.
 
 Se tenia un productor de mensajes gRPC alojado en una maquina remota, el cual tiene la capacidad de conectarse a un cliente, en nuestro caso Postman a través de API REST. Desde el productor gRPC, podemos conectarnos a un consumidor de mensajes, puede ser el pricipal, o el de MOM que es propuesto para casos de fallo. sin embargo el cliente no sabrá quien respondió a su petición, para garantizar la transparencia.
 Una vez el cliente se conecta al productor y este ultimo lo dijire a un cosumidor, se atendera la petición de listar o encontrar archivos y se le enviará respuesta una vez completada.
