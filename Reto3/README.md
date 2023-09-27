@@ -83,18 +83,8 @@ El diseño implementado es el que plantea el profesor en el enunciado:
 El usuario debe entrar al dominio reto3.stivenyepes.lat, donde encontrará una página de "Hola mundo" de WordPress.
 
 ## Resultados o pantallazos 
-
-reto3:
-![image](https://user-images.githubusercontent.com/60147085/228669849-6d3d040d-f158-4f6d-909e-f5a980bbca82.png)
-
-w1:
-![image](https://user-images.githubusercontent.com/60147085/228668982-e8a30921-3cfc-456b-bea6-1ad36dc2102c.png)
-
-w2:
-![image](https://user-images.githubusercontent.com/60147085/228669924-597f8373-94ce-4fa9-bcfb-4f607b4d7c90.png)
+![WhatsApp Image 2023-09-27 at 1 31 18 PM (1)](https://github.com/SaraCastril1/smcastril1-st0263/assets/74980999/9d797834-004f-4b5c-a949-f6b9770f5e2c)
 
 
 # referencias:
-Overview of docker compose CLI: https://docs.docker.com/compose/reference/
-How To Set Up an NFS Mount on Ubuntu 22.04: https://www.digitalocean.com/community/tutorials/how-to-set-up-an-nfs-mount-on-ubuntu-22-04
-How to Connect a Domain to a Server or Hosting: https://www.namecheap.com/support/knowledgebase/article.aspx/9837/46/how-to-connect-a-domain-to-a-server-or-hosting/
+
