@@ -54,11 +54,10 @@ La url se conecta al servidor de nginx
   Todo el desarrollo está desplegado en la nube de Google Cloud Platform (GCP) utilizando IaaS, específicamente las máquinas virtuales del servicio Compute Engine. Se utilizaron contenedores de Docker montados a través de Docker Compose para los componentes de la aplicación en WordPress, la base de datos y el balanceador de carga. Para el servidor NFS, se configuró el host directamente en la máquina virtual.
   
 ## detalles técnicos
-  - Tipo de maquina virtual: e2-Small.
-  - Sistema operativo: Ubuntu 18.04 LTS.
+  - Sistema operativo: Ubuntu 22.04 LTS.
   - Docker version 20.10.21.
   - Docker-compose version 1.17.1.
-  - Base de datos: MySQL 5.7.
+  - Base de datos: MySQL 8.
   - Balanceador de carga: NGINX.
   - CMS :WordPress.
 
