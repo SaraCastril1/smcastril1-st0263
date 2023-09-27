@@ -63,41 +63,34 @@ La url se conecta al servidor de nginx
 
 ## descripción y como se configura los parámetros del proyecto (ej: ip, puertos, conexión a bases de datos, variables de ambiente, parámetros, etc)
   Los diferentes parámetros se configuran en los archivos de Docker Compose, donde se especifica la dirección IP, los puertos, la conexión a la base de datos, las variables de ambiente, entre otros. Se pueden editar estos parámetros según las necesidades de cada caso.
-  ![image](https://user-images.githubusercontent.com/60147085/228716276-43859d68-8286-42c4-b63e-20bc9c9682cc.png)
 
   
 ## Organización del código por carpetas
-  El código está organizado en varias carpetas, como se muestra en la siguiente imagen:
-  
-![image](https://user-images.githubusercontent.com/60147085/228677957-4e26466c-ac3f-469a-8973-93a21fbe6036.png)
+  El código está organizado en varias carpetas, como se muestra:
+![image](https://github.com/SaraCastril1/smcastril1-st0263/assets/67118511/d658a822-d936-42a7-80ce-f598f4d4b0e7)
 
 
 ## Resultados o pantallazos 
   
-  Maquinas virtuales configuradas corriendo:
-  ![image](https://user-images.githubusercontent.com/60147085/228716522-5cbb943d-6982-4c3b-9d60-bee0b515e567.png)
-
+  Video Funcionando:
+  https://drive.google.com/file/d/1AFZ70PPShL4-D9TiAPvRKnX5RekOTU5-/view?usp=sharing
 
 
 # 4. Descripción del ambiente de EJECUCIÓN (en producción) lenguaje de programación, librerias, paquetes, etc, con sus numeros de versiones.
 
 ## IP o nombres de dominio en nube o en la máquina servidor.
   - IPs:
-  LB: 34.30.3.196
-  wordpress1:35.223.171.80
-  wordpress2: 130.211.215.101
+  nfs:  100.24.108.199
+  nginx: 54.235.70.229
+  db:44.218.125.229
+  wordpress1: 18.214.11.58
+  wordpress2: 54.91.31.240
   
-  - Dominio: reto3.stivenyepes.lat
+  - Dominio: http://reto3ssm.us.to/
   
-    para hacer pruebas se estableció un dominio para acceder directamente a cada una de las instancias de wordpress:
-    w1.stivenyepes.lat -
-    w2.stivenyepes.lat
 
-## como se lanza el servidor.
-  Para lanzar el servidor solamente es necesario iniciar las maquinas virtuales en GCP.
 
-## una mini guia de como un usuario utilizaría el software o la aplicación
-El usuario debe entrar al dominio reto3.stivenyepes.lat, donde encontrará una página de "Hola mundo" de WordPress.
+.
 
 ## Resultados o pantallazos 
 ![WhatsApp Image 2023-09-27 at 1 31 18 PM (1)](https://github.com/SaraCastril1/smcastril1-st0263/assets/74980999/9d797834-004f-4b5c-a949-f6b9770f5e2c)
