@@ -30,7 +30,7 @@ El diseño implementado es el que plantea el profesor en el enunciado:
 ## como se compila y ejecuta.
 Primero se levantan todas las maquinas virtuales, luego en las maquinas de "wordpress_main" y "wordpress_backup" conectarlas al servidor nfs con el comando:
 ```
-sudo mount 100.24.108.199:/var/general/nfs /nfs/wp
+sudo mount 100.24.108.199:/var/nfs/general /nfs/wp
 ```
 Una vez hecho esto, puede proceder a iniciar el nginx, para esto, aplicar los siguientes comandos en la instancia "nginx_server"
 ```
