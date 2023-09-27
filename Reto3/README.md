@@ -24,10 +24,13 @@ Como se mencionó anteriormente, del reto no se pudo cumplir con el requisito de
 El diseño implementado es el que plantea el profesor en el enunciado:
 ![image](https://user-images.githubusercontent.com/60147085/228666003-3a14e263-5e38-4af1-9fbe-53d850e3d282.png)
 
+Los dokcer con el wordpress tienen mapeado en el volumen una carpeta compartida que se conecta al servidor nfs, de esta forma, cualquier cambio quese haga desde cualquier maquina virtual (wordpress_main y wordpress_backup) se actualize en ambas automaticamente.
+
 
 # 3. Descripción del ambiente de desarrollo y técnico: lenguaje de programación, librerias, paquetes, etc, con sus numeros de versiones.
 
 ## como se compila y ejecuta.
+todos los docker compose se encuentran en la ruta ~/ de la instancia.
 Primero se levantan todas las maquinas virtuales, luego en las maquinas de "wordpress_main" y "wordpress_backup" conectarlas al servidor nfs con el comando:
 ```
 sudo mount 100.24.108.199:/var/nfs/general /nfs/wp
@@ -35,9 +38,13 @@ sudo mount 100.24.108.199:/var/nfs/general /nfs/wp
 Una vez hecho esto, puede proceder a iniciar el nginx, para esto, aplicar los siguientes comandos en la instancia "nginx_server"
 ```
 sudo systemctl stop nginx
-docker-compose up -d
+sudo docker-compose up -d
 ```
 esto se hace para que utilice el nginx de docker y no nativo de la maquina
+Ahora podemos levantar los docker con wordpress, para esto simplemente vamos a las instancias de "wordpress_main" y "wordpress_backup" y realizamos:
+```
+sudo docker-compose up -d
+```
 Una vez hecho esto, deberia poder conectarse por la url:
 http://reto3ssm.us.to/
 La url se conecta al servidor de nginx
