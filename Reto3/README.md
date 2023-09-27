@@ -28,9 +28,19 @@ El diseño implementado es el que plantea el profesor en el enunciado:
 # 3. Descripción del ambiente de desarrollo y técnico: lenguaje de programación, librerias, paquetes, etc, con sus numeros de versiones.
 
 ## como se compila y ejecuta.
-
-- La mayoría de los componentes del reto están montados en contenedores de Docker. Para correr estos contenedores, se debe ir a la carpeta de cada uno de los componentes y ejecutar el archivo docker-compose.yml con el comando ´docker-compose -f <nombre del archivo> up´.
-
+Primero se levantan todas las maquinas virtuales, luego en las maquinas de "wordpress_main" y "wordpress_backup" conectarlas al servidor nfs con el comando:
+```
+sudo mount 100.24.108.199:/var/general/nfs /nfs/wp
+```
+Una vez hecho esto, puede proceder a iniciar el nginx, para esto, aplicar los siguientes comandos en la instancia "nginx_server"
+```
+sudo systemctl stop nginx
+docker-compose up -d
+```
+esto se hace para que utilice el nginx de docker y no nativo de la maquina
+Una vez hecho esto, deberia poder conectarse por la url:
+http://reto3ssm.us.to/
+La url se conecta al servidor de nginx
   
 ## detalles del desarrollo.
   Todo el desarrollo está desplegado en la nube de Google Cloud Platform (GCP) utilizando IaaS, específicamente las máquinas virtuales del servicio Compute Engine. Se utilizaron contenedores de Docker montados a través de Docker Compose para los componentes de la aplicación en WordPress, la base de datos y el balanceador de carga. Para el servidor NFS, se configuró el host directamente en la máquina virtual.
