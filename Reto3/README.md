@@ -28,6 +28,7 @@ Los dokcer con el wordpress tienen mapeado en el volumen una carpeta compartida 
 
 
 # 3. Descripción del ambiente de desarrollo y técnico: lenguaje de programación, librerias, paquetes, etc, con sus numeros de versiones.
+Si quiere subir imagenes para probar el nfs, puede ingresar mediante la ruta reto3ssm.us.to/login, donde la usuario es user y la contraseña password
 
 ## como se compila y ejecuta.
 todos los docker compose se encuentran en la ruta ~/ de la instancia.
