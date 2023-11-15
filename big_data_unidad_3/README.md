@@ -28,6 +28,14 @@ tablas Hive se podrán ver en Glue / Athena.**
   - Instance profile: EMR_EC2_DefaultRole
   - Custom automatic scaling role: LabRole
 
+4. Deja las demás configuraciones por defcto y finalmente click en "crear cluster".
+
+La creación de el clúster demorará aproximadamente 20 minutos. Sabrá que se creó exitosamente, cuando vea el estado en "waiting".
+
+![Alt text](4.jpeg)
+
+
+
   
 Se cumplió la funcionalidad de Apigateway, con ayuda de un API_Rest de flask, la cual toma las peticiones y las tranforma de JSON, que es el standar de la red a mensajes que puedan ser enviados por gRPC o AMQP a través de protobuffers. 
 Se cumplió la funcionalidad tanto de buscar archivos como la de listarlos, la fucionalidad del primer microservicio conectado a traves de gRPC y se construyó correctamente la interfaz en donde se despliega en aws con una IP elastica.
