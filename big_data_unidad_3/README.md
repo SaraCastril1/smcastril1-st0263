@@ -19,12 +19,14 @@ tablas Hive se podrán ver en Glue / Athena.**
 
 2. Configurar el software settings de la siguiete manera:
    ![Alt text](3.png)
+
+
   Nota: En el campo "s3.persistence.bucket": "smcastril1-lab1". "smcastrill1-lab1" Debe ser el nombre de un bucket creado     con anterioridad en s3.
 
 3. Agregue los las configuraciones de seguridad y los roles de esa manera:
-  Service role: EMR_DefaultRole
-  Instance profile: EMR_EC2_DefaultRole
-  Custom automatic scaling role: LabRole
+  - Service role: EMR_DefaultRole
+  - Instance profile: EMR_EC2_DefaultRole
+  - Custom automatic scaling role: LabRole
 
   
 Se cumplió la funcionalidad de Apigateway, con ayuda de un API_Rest de flask, la cual toma las peticiones y las tranforma de JSON, que es el standar de la red a mensajes que puedan ser enviados por gRPC o AMQP a través de protobuffers. 
