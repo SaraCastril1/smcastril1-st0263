@@ -34,6 +34,16 @@ La creación de el clúster demorará aproximadamente 20 minutos. Sabrá que se 
 
 ![Alt text](4.jpeg)
 
+5. Debe abrir todos los puertos TCP para acceso al clúster así:
+![Alt text](5.png)
+
+6. También  debe  abrir los  puertos  de  las  aplicaciones  de  hadoop/Spark  en  el  Security  Group  del  nodo MASTER del cluster.
+Los puestos a abrir los verá en la parte de aplicaciones de su clúster:
+
+![Alt text](6.jpeg)
+
+
+
 
 
   
