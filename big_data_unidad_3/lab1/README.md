@@ -40,6 +40,8 @@
 
 4. De click en "Copy S3 URL":
 
+![Alt text](5.png)
+
 `s3://smcastril1-lab1/datasets/ `
 
 `s3://smcastril1-lab1/datasets2/ `
