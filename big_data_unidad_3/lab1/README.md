@@ -45,3 +45,39 @@
 `s3://smcastril1-lab1/datasets/ `
 
 `s3://smcastril1-lab1/datasets2/ `
+
+# Tercer paso - CONECTARSE AL CLUSTER AMAZON EMR:
+
+![Alt text](6.png)
+
+# Cuarto paso - GESTIÓN DE ARCHIVOS EN HDFS VÍA TERMINAL:
+
+1. Instale git:
+
+```
+sudo yum update
+```
+
+```
+sudo yum install git
+```
+
+2. Clone el repositorio:
+
+```
+git clone https://github.com/st0263eafit/st0263-232.git
+```
+
+3. Crear tu propio directorio de 'datasets' en HDFS:
+
+```
+hdfs dfs -mkdir /user/hadoop/datasets
+```
+
+4. Copiar archivos locales (al servidor gateway) hacia HDFS:
+
+```
+ hdfs dfs -copyFromLocal st0263-232/bigdata/datasets/* /user/hadoop/datasets
+```
+
+![Alt text](7.png)
