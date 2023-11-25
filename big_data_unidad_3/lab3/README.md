@@ -1,4 +1,16 @@
-# Laboratorio 3
+## ST0263 Temas especiales en telemática
+
+#
+
+## Sara María Castrillón Ríos - smcastril1@eafit.edu.co
+
+#
+
+## Edwin Nelson Montoya Múnera - emontoya@eafit.edu.co
+
+#
+
+## Laboratorio3 - Hive-Sparksql:
 
 #
 

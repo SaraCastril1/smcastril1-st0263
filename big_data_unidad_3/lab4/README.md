@@ -1,4 +1,18 @@
-# Laboratorio 4: Pyspark
+## ST0263 Temas especiales en telemática
+
+#
+
+## Sara María Castrillón Ríos - smcastril1@eafit.edu.co
+
+#
+
+## Edwin Nelson Montoya Múnera - emontoya@eafit.edu.co
+
+#
+
+## Laboratorio4:
+
+#
 
 # Primer paso: Exploracion de datos
 
