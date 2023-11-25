@@ -19,18 +19,18 @@
 
 # Tercer paso: IMPLEMENTACIÓN DE UN DATA WAREHOUSE CON EMR y HIVE
 
-    1. Crear redshift cluster
-        ![Alt text](9.png)
-        ![Alt text](10.png)
-    2. Correr los querys de tickit
-        ![Alt text](11.png)
-        ![Alt text](12.png)
-    3. Crear un rol IAM para Amazon Redshift
-    ![Alt text](13.png)
-    ![Alt text](14.png)
-    ![Alt text](15.png)
-    ![Alt text](16.png)
-    4. Crear una base de datos externa en s3
-    ![Alt text](22.png)
-    5. Cargar datos en tabla event2
-    ![Alt text](24.png)
+   1. Crear redshift cluster
+      ![Alt text](9.png)
+      ![Alt text](10.png)
+   2. Correr los querys de tickit
+      ![Alt text](11.png)
+      ![Alt text](12.png)
+   3. Crear un rol IAM para Amazon Redshift
+   ![Alt text](13.png)
+   ![Alt text](14.png)
+   ![Alt text](15.png)
+   ![Alt text](16.png)
+   4. Crear una base de datos externa en s3
+   ![Alt text](22.png)
+   5. Cargar datos en tabla event2
+   ![Alt text](24.png)
